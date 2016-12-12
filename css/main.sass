@@ -1,0 +1,794 @@
+$break-large : 1200px
+$break-medium : 840px
+$break-small : 620px
+$break-ssmall : 420px
+
+$blue-dark : #0685b7
+$blue-light: #92c8da
+$grey-text : #ccc
+
+
+body,html
+  padding: 0
+  margin: 0
+
+.display
+  display: none
+
+//Forms
+.form-container
+  width: 100vw
+  background: #eee
+  z-index: 200
+  .say-whats-on
+    height: 2170px
+  .add-a-location
+    height: 1600px
+  .share-a-tip
+    height: 1530px
+  .close-button
+    height: 50px
+    width: 50px
+    border-radius: 50%
+    background: url(../img/close.svg) #f9788e
+    background-position: center
+    background-repeat: no-repeat
+    background-size: 30px
+    box-shadow: 0 3px 8px #999
+    position: fixed
+    top: 10px
+    right: 10px
+
+
+
+//navigation
+.navigation
+  display: flex
+  justify-content: center
+  width: 100vw
+  transition: all .3s ease-in-out
+  position: fixed
+  z-index: 100
+  .mobile-nav-toggle
+    display: none
+    height: 40px
+    width: 40px
+    margin-right: 10px
+    align-items: center
+    cursor: pointer
+
+    span,span::before,span::after
+      content: ""
+      display: block
+      height: 2px
+      background: white
+      width: 100%
+      position: relative
+      transition: all .3s ease-in-out
+
+    span::before
+      top: 10px
+    span::after
+      top: -12px
+  .is-open span
+      background: transparent
+  .is-open span::before,
+  .is-open span::after
+      transform-origin: center
+      transform: rotate(45deg)
+      top: 0
+  .is-open span::before
+      transform: rotate(-45deg)
+
+  .nav
+    height: 50px
+    width: 100%
+    margin-bottom: -50px
+    background: rgba(#444,0.9)
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2)
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    ul
+      list-style-type: none
+      margin: 0px
+      padding: 0px
+      height: 100%
+      li
+        float: left
+        position: relative
+        height: 100%
+        width: 130px
+        margin: 0px 0px 0px 0px
+        display: flex
+        align-items: center
+        justify-content: center
+        a
+          width: 100%
+          height: 90%
+          display: flex
+          text-align: center
+          justify-content: center
+          align-items: center
+          padding: 0px
+          text-decoration: none
+          font-size: 1.5em
+          font-family: roboto
+          position: relative
+          color: white
+        a.active
+          border-bottom: 4px solid $blue-dark
+          color: rgba(white,0.5)
+        #nav-home
+          display: flex
+          height: 100%
+          justify-content: center
+          align-items: center
+          img
+            height: 45px
+  #mobile-logo img
+    display: none
+
+.navigation.is-open,.navigation
+  .mobile-nav
+    display: none
+    position: absolute
+    width: 100%
+    padding: 30px 0 20px
+    transform: translateY(-100%)
+    transition: all 1s ease-in-out
+    ul
+      list-style: none
+      margin: none
+      padding: none
+    li
+      text-align: center
+      margin-bottom: 10px
+
+
+.open
+  display: block
+
+
+//cover page
+.cover
+  background-image: url(../img/Edit.jpg)
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: top
+  height: 100vh
+  width: 100vw
+  display: flex
+  justify-content: center
+  .wrapper
+    width: 1200px
+    position: relative
+    overflow: hidden
+    .logo
+      background: url(../img/logo_text.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      height: 30%
+      width: 30%
+      position: absolute
+      top: 10%
+      left: 5%
+    .desc
+      position: absolute
+      top: 30%
+      left: 5%
+      width: 50%
+      font-size: 3em
+      font-weight: 800
+      color: white
+    .google_button
+      position: absolute
+      top: 80%
+      left: 5%
+      z-index: 5
+      img
+        height: 80px
+        width: auto
+    .apple_button
+      position: absolute
+      top: 80%
+      left: 35%
+      z-index: 5
+      img
+        height: 80px
+        width: auto
+    .device
+      background: url(../img/device1.png)
+      background-size: contain
+      background-repeat: no-repeat
+      height: 120%
+      width: 70%
+      position: absolute
+      bottom: -40%
+      right: -10%
+
+
+
+//About page
+.about
+  width: 100vw
+  display: flex
+  justify-content: center
+  .wrapper
+    width: 1200px
+    display: flex
+    flex-wrap: wrap
+    .events,
+    .places,
+    .tips,
+    .post
+      display: inline-block
+      width: 50%
+      position: relative
+      img
+        height: 150px
+        width: 100%
+        margin-top: 30px
+      h3
+        text-align: center
+      p
+        text-align: justify
+        margin: 0px 50px 30px 50px
+    .events,.places
+      margin-top: 60px
+    .tips,.post
+      margin-bottom: 40px
+    .post
+      .links
+        display: flex
+        justify-content: center
+        a
+          background: #f9788e
+          padding: 10px 20px
+          text-decoration: none
+          color: black
+          font-weight: bold
+          display: inline-block
+          margin: 10px
+          border-radius: 5px
+          cursor: pointer
+
+
+
+//Join page
+.join
+  width: 100vw
+  display: flex
+  justify-content: center
+  box-shadow: 0 0 12px #999
+  .wrapper
+    width: 1200px
+    display: flex
+    flex-wrap: wrap
+    .student
+      width: 50%
+      background: #5a9bc9
+      padding: 20px 0px 20px 0px
+      img
+        height: 200px
+        width: 100%
+        margin-top: 50px
+      p,h3,ul,span
+        margin-top: 30px
+        padding: 0px 50px
+        color: #393939
+      span
+        font-weight: bold
+      h3
+        text-align: center
+      ul
+        padding: 0px 80px
+    .company
+      width: 50%
+      background: #393939
+      padding: 20px 0px 20px 0px
+      position: relative
+      img
+        height: 200px
+        width: 100%
+        margin-top: 50px
+      p,ul,h3
+        margin-top: 30px
+        padding: 0px 50px
+        color: #5a9bc9
+      h3
+        text-align: center
+      ul
+        padding: 0px 80px
+      a
+        text-decoration: none
+        background: #f9788e
+        color: white
+        font-weight: bold
+        border-radius: 5px
+        padding: 10px
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        cursor: pointer
+    .company:hover,.student:hover
+      transform: scale(1.02)
+      z-index: 10
+
+//Download page
+.download
+  background: url(../img/back.png)
+  height: 100vh
+  display: flex
+  justify-content: center
+  padding-top: 50px
+  .wrapper
+    width: 1200px
+    height: 100%
+    display: flex
+    flex-wrap: wrap
+    position: relative
+    justify-content: center
+    img
+      height: 50%
+      width: auto
+    p
+      width: 60%
+      color: $blue-dark
+      font-size: 25px
+      font-weight: bold
+      text-align: center
+    .button-container
+      width: 60%
+      position: relative
+      .google_button img
+        height: 60px
+        float: left
+        margin-left: 80px
+      .apple_button img
+        height: 60px
+        float: right
+        margin-right: 80px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Contact page
+.contact
+  width: 100vw
+  background: url(../img/delft-back.svg)
+  background-position: top
+  background-repeat: repeat
+  background-size: contain
+  display: flex
+  justify-content: center
+  -webkit-appearance: none
+  .wrapper
+    width: 1200px
+    position: relative
+    .form-content
+      width: 80%
+      background: $blue-dark
+      border-radius: 5px 5px 5px 5px
+      display: flex
+      position: relative
+      margin: 50px auto
+      h3
+        color: white
+        font-size: 2.5em
+      #mc_embed_signup
+        color:white
+        height: 100%
+        width: 50%
+        margin: 30px
+        float: left
+        display: flex
+        justify-content: center
+        -webkit-appearance: none
+        input
+          background: white
+          height: 30px
+          border-radius: 5px
+          font-size: 20px
+          width: 100%
+          -webkit-appearance: none
+        label
+          font-size: 1em
+          color: #eee
+          display: block
+          margin-top: 10px
+        .clear
+          display: flex
+          justify-content: center
+          .submit
+            background: #f9788e
+            color: white
+            font-weight: bold
+            align-items: left
+            border: none
+            height: 40px
+            width: 90px
+            margin-top: 30px
+            text-align: center
+            cursor: pointer
+      .thank-you
+        color: white
+        text-align: justify
+        float: right
+        margin: auto 30px
+        width: 50%
+        span
+          color: #aaa
+
+//Social page
+.social
+  width: 100vw
+  display: flex
+  justify-content: center
+  background: $blue-light
+  .wrapper
+    width: 1200px
+    display: flex
+    align-items: center
+    position: relative
+    margin: 10px 0px
+    .heart
+      float: left
+      img
+        height: 80px
+        margin-left: 10px
+    p
+      color: white
+      font-weight: bold
+      text-align: center
+      span
+        font-size: 40px
+    .follow
+      font-size: 40px
+      margin-right: 50px
+      margin-left: 400px
+    .facebook
+      img
+        height: 50px
+        margin-left: 50px
+        margin-right: 10px
+    .twitter
+      img
+        height: 50px
+        margin-right: 10px
+
+//Footer section
+footer
+  width: 100vw
+  display: flex
+  justify-content: center
+  align-items: center
+  background: $blue-dark
+  .wrapper
+    width: 1200px
+    color: $grey-text
+    margin: 20px auto
+
+@media screen and (max-width: $break-large)
+  .cover
+    .wrapper
+      width: 100%
+      .desc
+        font-size: 3em
+      .google_button
+        img
+          height: 70px
+      .apple_button
+        img
+          height: 70px
+
+  .about
+    .wrapper
+      width: 100%
+
+  .join
+    .wrapper
+      width: 100%
+
+  .downlaod
+    .wrapper
+      width: 100%
+
+  .contact
+    .wrapper
+      width: 100%
+
+  .social
+    .wrapper
+      width: 100%
+
+  footer
+    .wrapper
+      padding-left: 10px
+
+@media screen and (max-width: $break-medium)
+  .cover
+    .wrapper
+      width: 100%
+      .logo
+        height: 40%
+        width: 40%
+      .desc
+        top: 22%
+        font-size: 3em
+      .google_button
+        top: 55%
+        left: 10%
+        img
+          height: 80px
+      .apple_button
+        top: 75%
+        left: 10%
+        img
+          height: 80px
+      .device
+        height: 300%
+        width: 150%
+        bottom: -220%
+        right: -60%
+
+  .about
+    .wrapper
+      justify-content: center
+      .events,
+      .places,
+      .tips,
+      .post
+        width: 80%
+      .places
+        margin-top: 0px
+      .tips
+        margin-bottom: 0px
+
+  .join
+    .wrapper
+      .student,.company
+        width: 100%
+        position: relative
+        padding-bottom: 80px
+        p,ul
+          width: 80%
+          margin: 0
+          padding: 0
+          margin: 10px auto
+        span
+          margin-left: 20px
+
+
+  .social
+    .wrapper
+      .follow
+        font-size: 30px
+        margin-right: 30px
+        margin-left: 120px
+      .facebook
+        img
+          height: 40px
+          margin-left: 10px
+      .twitter
+        img
+          height: 40px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: $break-small)
+  .navigation,.navigation.is-open
+    height: 40px
+    background: rgba(#444,0.9)
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2)
+    justify-content: space-between
+    .nav
+      display: none
+    #mobile-logo img
+      display: block
+      height: 40px
+      width: 40px
+      margin-left: 10px
+    .mobile-nav-toggle
+      display: flex
+      z-index: 100
+
+  .navigation.is-open
+    height: 100vh
+    .mobile-nav
+      display: block
+      z-index: 10
+      transform: translateY(20%)
+      .main-nav
+        padding-left: 0
+        li
+          display: block
+          width: 100%
+          margin-top: 10%
+          a
+            border: none
+            font-size: 20px
+            font-weight: bolder
+            color: white
+            text-decoration: none
+
+  .cover
+    .wrapper
+      width: 100%
+      .logo
+        height: 50%
+        width: 50%
+        left: 50%
+        transform: translateX(-35%)
+      .desc
+        font-size: 1.5em
+        width: 80%
+        display: flex
+        justify-content: center
+        margin: 0px
+        padding: 0px
+        margin-top: 30px
+      .google_button
+        img
+          height: 45px
+      .apple_button
+        img
+          height: 45px
+      .device
+        bottom: -245%
+        right: -65%
+
+  .about
+    .wrapper
+      justify-content: center
+      .events,.places,.tips,.post
+        width: 100%
+      .places
+        margin-top: 0px
+
+
+
+  .download
+    .wrapper
+      width: 100%
+      img
+        height: 30%
+        width: auto
+      p
+        width: 80%
+        font-size: 1.2em
+      .button-container
+        width: 100%
+        .google_button img
+          height: 40px
+          margin-left: 40px
+        .apple_button img
+          height: 40px
+          margin-right: 40px
+
+
+  .contact
+    .wrapper
+      width: 100%
+      .form-content
+        flex-wrap: wrap
+        justify-content: center
+        #mc_embed_signup
+          width: 100%
+          height: 50%
+          margin: 0px 10px
+          input
+            width: 200px
+          .submit
+            padding: 0px
+        .thank-you
+          width: 100%
+          height: 50%
+
+
+  .social
+    .wrapper
+      margin: 0px
+      flex-wrap: wrap
+      justify-content: center
+      .heart
+        img
+          height: 60px
+      .follow
+        font-size: 30px
+        margin-right: 0px
+        margin-left: 0px
+        text-align: center
+      .facebook
+        img
+          height: 50px
+          margin-left: 10px
+      .twitter
+        img
+          height: 50px
+
+  footer
+    .wrapper
+      width: 100%
+      font-size: 0.8em
+
+@media screen and (max-width: $break-ssmall)
+  .cover
+    .wrapper
+      width: 100%
+      .desc
+        top: 15%
+        font-size: 1.5em
+      .google_button
+        left: 5%
+        img
+          height: 45px
+      .apple_button
+        left: 5%
+        img
+          height: 45px
+
+  .join
+    .wrapper
+      .student,.company
+        span
+          margin-left: 0px
+
+  .download
+    .wrapper
+      .button-container
+        .google_button img
+          height: 35px
+          margin-left: 20px
+        .apple_button img
+          height: 35px
+          margin-right: 20px
